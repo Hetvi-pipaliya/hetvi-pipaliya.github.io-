@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hetvi Pipaliya — GenAI Agent Engineer & Tech Consultant</title>
     <!-- Fonts & Icons -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         :root {
             --bg-main: #0B0F19;
@@ -34,7 +36,6 @@
             line-height: 1.6;
         }
 
-        /* Ambient Background Light */
         .ambient-glow {
             position: fixed;
             width: 600px;
@@ -46,7 +47,6 @@
             pointer-events: none;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -87,7 +87,6 @@
             color: var(--accent);
         }
 
-        /* Hero Section */
         header {
             min-height: 100vh;
             padding: 0 10%;
@@ -164,7 +163,6 @@
             border-color: var(--text-secondary);
         }
 
-        /* Section Global Settings */
         section {
             padding: 8rem 10%;
             position: relative;
@@ -188,7 +186,6 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* About Grid Layout */
         .about-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -205,7 +202,40 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Technical Skills Matrix Layout */
+        .about-side {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .about-side h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-side ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .about-side li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.9rem;
+        }
+
+        .about-side li span {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -246,7 +276,6 @@
             line-height: 1.7;
         }
 
-        /* Projects Section Architecture */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -319,7 +348,6 @@
             color: var(--accent);
         }
 
-        /* Credentials Layout Block */
         .certs-list {
             display: flex;
             flex-direction: column;
@@ -357,15 +385,323 @@
             border-radius: 6px;
         }
 
-        /* Footer Layer */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 1rem auto 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         footer {
-            padding: 5rem 10%;
+            padding: 3rem 10%;
             background: #080B12;
             border-top: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         footer p {
             color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1.2rem 6%; }
+            .nav-links { display: none; }
+            header, section, footer { padding-left: 6%; padding-right: 6%; }
+            h1 { font-size: 2.6rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .cta-group { flex-direction: column; }
+            .cert-item { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <nav>
+        <div class="logo">Hetvi Pipaliya</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="tag">Applied AI Engineer & Cloud Solutions</div>
+        <h1>Turning ambiguous<br>problems into scalable<br>tech solutions.</h1>
+        <p class="hero-desc">
+            Final-year B.Sc. IT student blending cloud solution architecture, applied AI
+            engineering, and enterprise digital transformation — building GenAI platforms,
+            vector-database systems, and data-driven dashboards.
+        </p>
+        <div class="cta-group">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title"><span>01.</span> About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    I'm Hetvi Pipaliya, a final-year B.Sc. Information Technology undergraduate
+                    (expected April 2027) with a blended focus on cloud solution architecture,
+                    applied AI engineering, and enterprise digital transformation.
+                </p>
+                <p>
+                    I'm skilled at business-to-tech alignment — translating ambiguous business
+                    problems into scalable, secure technical solutions across GenAI platforms,
+                    vector databases, and data-driven analytics dashboards.
+                </p>
+                <p>
+                    I'm a selected member of the Google Gen AI Academy (APAC Cohort 3) and a
+                    Google Student Ambassador, with a consistent record of cross-functional
+                    stakeholder communication, technical documentation, and global developer
+                    ecosystem engagement. I'm looking to bring consulting-oriented engineering
+                    judgment and solution architecture thinking to enterprise technology
+                    initiatives.
+                </p>
+            </div>
+            <div class="about-side">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li>Education <span>B.Sc. IT, 2027</span></li>
+                    <li>College <span>SDJ International</span></li>
+                    <li>Focus <span>GenAI & Cloud</span></li>
+                    <li>Based in <span>Surat, Gujarat</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title"><span>02.</span> Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-number">AI / ML</span>
+                <h3>Cloud & AI Engines</h3>
+                <p class="skill-list">
+                    Python, Large Language Models (LLMs), LangChain, Vertex AI, Cloud Run,
+                    Retrieval-Augmented Generation (RAG), Prompt Engineering
+                </p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-number">DATA</span>
+                <h3>Data & Backend Architecture</h3>
+                <p class="skill-list">
+                    SQL, SQLite, Vector Databases (ChromaDB), FastAPI, RESTful APIs, Pandas,
+                    NumPy, Plotly, Matplotlib
+                </p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-number">TOOLS</span>
+                <h3>Enterprise & Dev Tools</h3>
+                <p class="skill-list">
+                    GitHub, Visual Studio Code, Environment Variable Configuration, Linux/CLI
+                    Scripting, Google Workspace
+                </p>
+            </div>
+            <div class="skill-card">
+                <span class="skill-number">CONSULT</span>
+                <h3>Consulting & Frameworks</h3>
+                <p class="skill-list">
+                    Systems Architecture, Tech Pre-Sales Inputs, Risk Identification, Technical
+                    Documentation, Cross-Functional Team Collaboration
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title"><span>03.</span> Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>RAG Chatbot — Enterprise Document Intelligence Q&A</h3>
+                    <p>
+                        A secure Retrieval-Augmented Generation pipeline that automates
+                        enterprise document workflows, letting business users query unstructured
+                        content through a context-aware, low-latency system on a Groq LLM
+                        backend. ChromaDB powers semantic vector search at enterprise scale.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>FastAPI</span><span>LangChain</span><span>ChromaDB</span><span>Groq</span><span>Streamlit</span>
+                    </div>
+                    <a href="https://rag-chatbot-5e82tlzjhoo9swg3ms5egr.streamlit.app" target="_blank" class="project-link">Live Demo →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>ML Dashboard — Predictive Analytics Pipeline</h3>
+                    <p>
+                        A data engineering pipeline with structured validation and governance
+                        basics, transforming a 300-record student dataset into automated Plotly
+                        visualizations and a trained Random Forest Classifier for
+                        performance prediction and reporting.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Plotly</span><span>Pandas</span><span>NumPy</span>
+                    </div>
+                    <a href="https://ml-dashboard-sr5wxqqnhymjgtvheiwjut.streamlit.app" target="_blank" class="project-link">Live Demo →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Automated Weather Intelligence Hub</h3>
+                    <p>
+                        Integrates real-time weather REST APIs via LangChain wrappers, streaming
+                        live data into AI-generated predictive insights and basic risk-flagging
+                        powered by the LLaMA 3 framework.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>Streamlit</span><span>LangChain</span><span>Groq</span><span>LLaMA 3</span><span>OpenWeatherMap API</span>
+                    </div>
+                    <a href="https://weather-dashboard-khvzv7ufddhx4inkqdfwfg.streamlit.app" target="_blank" class="project-link">Live Demo →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Student Record Management System</h3>
+                    <p>
+                        A full-featured CRUD command-line application with secure SQLite
+                        integration, structured input validation, and robust exception
+                        handling — reinforcing core systems design discipline.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>SQLite</span><span>OOP</span><span>CRUD</span>
+                    </div>
+                    <a href="#" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title"><span>04.</span> Certifications & Coursework</h2>
+        <div class="certs-list">
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>GenAI Powered Data Analytics Job Simulation</h3>
+                    <p>Tata Group, via Forage — Credential ID: rg88PesrjXwJf2Ewp</p>
+                </div>
+                <span class="cert-date">2026</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>Quizivizz AI Champion</h3>
+                    <p>Organized by HackerRank Campus Crew & Unstop — top national achievement in AI problem-solving</p>
+                </div>
+                <span class="cert-date">2026</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>Core Academic Tracks</h3>
+                    <p>Computer Networks, DBMS, Operating Systems, Data Structures & Algorithms</p>
+                </div>
+                <span class="cert-date">Ongoing</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2 class="section-title"><span>05.</span> Community Leadership & Global Impact</h2>
+        <div class="certs-list">
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>Google Student Ambassador</h3>
+                    <p>Represented Google's developer programs on campus; led public-speaking sessions and technical workshops for cross-functional, non-technical audiences.</p>
+                </div>
+                <span class="cert-date">2026</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>Google Gen AI Academy — APAC Edition, Cohort 3</h3>
+                    <p>Building advanced generative AI pipelines, model testing workflows, and Vertex AI / Cloud Run architectures with applied enterprise use cases.</p>
+                </div>
+                <span class="cert-date">Active</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>Microsoft Fabric Community Member</h3>
+                    <p>Contributing to international cloud data pattern forums, analyzing enterprise analytics architectures with global practitioners.</p>
+                </div>
+                <span class="cert-date">Active</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>HackerRank Campus Crew</h3>
+                    <p>Certified top performer in national AI challenges, recognized for algorithmic problem-solving and rapid technical adaptation under pressure.</p>
+                </div>
+                <span class="cert-date">2026</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title"><span>06.</span> Get In Touch</h2>
+        <div class="contact-box">
+            <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.6rem;">Let's build something.</h3>
+            <p>
+                Open to internships, consulting engagements, and enterprise technology roles.
+                Reach out and I'll get back to you.
+            </p>
+            <p style="font-size:0.9rem; margin-top:-1rem;">hetvipipaliya0501@gmail.com &nbsp;|&nbsp; +91 9157471100</p>
+            <div class="contact-links">
+                <a href="mailto:hetvipipaliya0501@gmail.com" class="btn btn-primary">Email Me</a>
+                <a href="#" class="btn btn-secondary">LinkedIn</a>
+                <a href="#" class="btn btn-secondary">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hetvi Pipaliya. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:hetvipipaliya0501@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
